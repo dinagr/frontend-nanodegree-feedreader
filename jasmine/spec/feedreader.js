@@ -109,23 +109,40 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
+        var origFeed, UpdatedFeed;
         beforeEach(function(done) {
             /*Finish the loadFeed function before continuing to the test*/
-            loadFeed(0, done); 
+            loadFeed(1, done);
+            origFeed = $('.feed').html(); 
+            loadFeed(2, done);
+            UpdatedFeed = $('.feed').html(); 
         });
 
         it('On loadFeed - the content actually changes', function() {
             /*Finish the new loadFeed function before continuing to the test*/
             /*The content that is created after each of these load should be different*/
-            var origFeed = $('.feed').html();
-            console.log('2origFeed'+this.origFeed);
-            beforeEach(function(done) {
-            /*Finish the loadFeed function before continuing to the test*/
-            loadFeed(1, done); 
-            });
-            var UpdatedFeed = $('.feed').html();
-           // console.log('2UpdatedFeed'+UpdatedFeed);
-            expect(origFeed).not.toEqual(UpdatedFeed);
+            expect(origFeed).not.toEqual(loadFeed);
+        });
+    });
+    describe('Clicking on links', function() {
+        /* This is our first test - it tests to make sure that the
+         * allFeeds variable has been defined and that it is not
+         * empty. Experiment with this before you get started on
+         * the rest of this project. What happens when you change
+         * allFeeds in app.js to be an empty array and refresh the
+         * page?
+         */
+         var link = $('.tpl-entry.href');
+         var origPage = $('body').html();
+         console.log(origPage);
+
+        it('Once a link is clicked - a new page opens', function() {
+            /*Finish the new loadFeed function before continuing to the test*/
+            /*The content that is created after each of these load should be different*/            
+            link.click();
+            var newPage = $('body').html();
+            console.log(newPage);
+            expect(true).not.toEqual(false);
         });
     });
 }());
