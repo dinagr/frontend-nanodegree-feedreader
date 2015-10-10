@@ -5,7 +5,7 @@ At the moment all the tests have passed.
 
 #Libraries used in this project
 
-1.JQuery
+1.JQuery /n
 2.Jasmine
 
 #Authors
