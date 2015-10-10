@@ -1,6 +1,6 @@
 # General
 
-This app is an example of automatic tests in JS. <br />
+This app is an example of JS automatic tests. <br />
 At the moment all the tests have passed.
 
 #Libraries used in this project
