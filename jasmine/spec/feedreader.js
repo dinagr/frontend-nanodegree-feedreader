@@ -114,14 +114,17 @@ $(function() {
             /*Finish the loadFeed function before continuing to the test*/
             loadFeed(1, done);
             origFeed = $('.feed').html(); 
+        });
+        beforeEach(function(done) {
+            /*Finish the loadFeed function before continuing to the test*/
             loadFeed(2, done);
-            UpdatedFeed = $('.feed').html(); 
+            UpdatedFeed = $('.feed').html();  
         });
 
         it('On loadFeed - the content actually changes', function() {
             /*Finish the new loadFeed function before continuing to the test*/
             /*The content that is created after each of these load should be different*/
-            expect(origFeed).not.toEqual(loadFeed);
+            expect(origFeed).not.toEqual(UpdatedFeed);
         });
     });
 }());
