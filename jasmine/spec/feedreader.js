@@ -124,25 +124,4 @@ $(function() {
             expect(origFeed).not.toEqual(loadFeed);
         });
     });
-    describe('Clicking on links', function() {
-        /* This is our first test - it tests to make sure that the
-         * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
-         */
-         var link = $('.tpl-entry.href');
-         var origPage = $('body').html();
-         console.log(origPage);
-
-        it('Once a link is clicked - a new page opens', function() {
-            /*Finish the new loadFeed function before continuing to the test*/
-            /*The content that is created after each of these load should be different*/            
-            link.click();
-            var newPage = $('body').html();
-            console.log(newPage);
-            expect(true).not.toEqual(false);
-        });
-    });
 }());
