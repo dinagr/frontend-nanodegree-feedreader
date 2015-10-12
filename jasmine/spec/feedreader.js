@@ -27,21 +27,17 @@ $(function() {
         });
 
         it('All feeds have a non empty URL', function(){
-            /*Go over all feeds and check that the URL is not null*/
-            for(var i = 0; i< allFeeds.length; i++)
-            {
+            //Go over all feeds and check that the URL is not null
+            for(var i = 0; i< allFeeds.length; i++){
                 expect(allFeeds[i].url.length).toBeGreaterThan(0);
-                //console.log("url"+"i"+ allFeeds[i].url.length);
             }
         });
 
         it('All feeds have a name defined and it is not empty', function(){
-            /*Go over all feeds and check that the name is not null*/
-            for(var i = 0; i< allFeeds.length; i++)
-            {
+            //Go over all feeds and check that the name is not null
+            for(var i = 0; i< allFeeds.length; i++){
                 expect(allFeeds[i].name).toBeDefined;
                 expect(allFeeds[i].name.length).toBeGreaterThan(0);
-                //console.log("name"+"i"+allFeeds[i].name.length);
             }
         });
      });
@@ -58,14 +54,14 @@ $(function() {
         var menuIcon = $('.menu-icon-link');
 
         it('The menu is hidden by default', function() {
-            /*The 'menu-hidden' is the class that enables the menu to be hidden*/
-            /*Check if the class is used in the body when openeing the app*/
+            //The 'menu-hidden' is the class that enables the menu to be hidden
+            //Check if the class is used in the body when openeing the app
             visible = $('body').hasClass('menu-hidden');
             expect(visible).toBe(true);
         });
 
         it('The menu displays when clicked', function() {
-            /*Simulate a click on the menu icon - the class 'menu-hidden' should disappear from the DOM*/
+            //Simulate a click on the menu icon - the class 'menu-hidden' should disappear from the DOM
             menuIcon.trigger("click");
             visible = $('body').hasClass('menu-hidden');
             expect(visible).toBe(false);
@@ -73,8 +69,8 @@ $(function() {
         });
 
         it('The menu hides when clicked again', function() {
-            /*Simulate 2 clicks on the menu icon*/
-            /*The class 'menu-hidden' should be back in the DOM after the secone click*/
+            //Simulate 2 clicks on the menu icon
+            //The class 'menu-hidden' should be back in the DOM after the secone click
             menuIcon.click();
             menuIcon.click();
             visible = $('body').hasClass('menu-hidden');
@@ -91,12 +87,12 @@ $(function() {
          * page?
          */
         beforeEach(function(done) {
-            /*Finish the loadFeed function before continuing to the test*/
+            //Finish the loadFeed function before continuing to the test
             loadFeed(0, done);
         });
 
         it('on loadFeed - at least one entry element under feed container', function() {
-            /*The num of elements of type 'entry' that are inside the 'feed' container should be bigger than 0*/
+            //The num of elements of type 'entry' that are inside the 'feed' container should be bigger than 0
             expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
@@ -111,19 +107,20 @@ $(function() {
          */
         var origFeed, UpdatedFeed;
         beforeEach(function(done) {
-            /*Finish the loadFeed function before continuing to the test*/
-            loadFeed(1, done);
-            origFeed = $('.feed').html(); 
-        });
-        beforeEach(function(done) {
-            /*Finish the loadFeed function before continuing to the test*/
-            loadFeed(2, done);
-            UpdatedFeed = $('.feed').html();  
+            //Finish the loadFeeds function before continuing to the test 
+            loadFeed(1, function() {
+                origFeed = $('.feed').html();
+                done();
+            });
+            loadFeed(2, function() {
+                UpdatedFeed = $('.feed').html();
+                done();
+            });
         });
 
         it('On loadFeed - the content actually changes', function() {
-            /*Finish the new loadFeed function before continuing to the test*/
-            /*The content that is created after each of these load should be different*/
+            //Finish the new loadFeed function before continuing to the test
+            //The content that is created after each of these load should be different
             expect(origFeed).not.toEqual(UpdatedFeed);
         });
     });
