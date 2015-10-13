@@ -36,7 +36,7 @@ $(function() {
 
         it('All feeds have a name defined and it is not empty', function(){
             //Go over all feeds and check that the name is not null
-            for(var i = 0; i< allFeeds.length; i++){
+            for(var i = 0; i < allFeeds.length; i++){
                 expect(allFeeds[i].name).toBeDefined();
                 expect(allFeeds[i].name.length).toBeGreaterThan(0);
                 expect(allFeeds[i].name).not.toBe('');
@@ -74,8 +74,8 @@ $(function() {
             //The class 'menu-hidden' should be back in the DOM after the secone click
             menuIcon.click();
             menuIcon.click();
-            visible = $('body').hasClass('menu-hidden');
-            expect(visible).toBe(true);
+            hidden = $('body').hasClass('menu-hidden');
+            expect(hidden).toBe(true);
         });
     });
 
@@ -120,7 +120,7 @@ $(function() {
         it('On loadFeed - the content actually changes', function() {
             //Finish the new loadFeed function before continuing to the test
             //The content that is created after each of these load should be different
-            expect(false).not.toEqual(true);
+            expect(updatedFeed).not.toEqual(origFeed);
                 
         });
     });
