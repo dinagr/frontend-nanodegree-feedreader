@@ -30,6 +30,7 @@ At the moment all the tests have passed.
 
 # Instructions 
 
-1. By clicking on one of the test - this specific test will be activated. 
-2. By marking the flag next to 'raise exceptions' all the tests will be activated. 
-3. In the green headline it will be specified how many test have failed.  
+1. open index.html in a web browser
+2. By clicking on one of the test - this specific test will be activated. 
+3. By marking the flag next to 'raise exceptions' all the tests will be activated. 
+4. In the green headline it will be specified how many test have failed.  
