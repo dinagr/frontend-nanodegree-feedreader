@@ -27,6 +27,8 @@ At the moment all the tests have passed.
 6. A test that ensures the menu changes visibility when the menu icon is clicked again. 
 7. A test that ensures when the loadFeed function is called and completes its work, there is at least a single entry element within the feed container.
 8. A test that ensures when a new feed is loaded by the loadFeed function that the content actually changes.
+9. A test that checks if allFeeds variable is an of instance of Array
+10. A test that ensures if the feeds URLs are valid
 
 # Instructions 
 
