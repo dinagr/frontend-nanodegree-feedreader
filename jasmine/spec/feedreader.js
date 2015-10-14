@@ -67,6 +67,7 @@ $(function() {
             menuIcon.trigger('click');
             hidden = $('body').hasClass('menu-hidden');
             expect(hidden).toBe(false);
+            menuIcon.click();
         });
 
         it('The menu hides when clicked again', function() {
@@ -121,7 +122,6 @@ $(function() {
             //Finish the new loadFeed function before continuing to the test
             //The content that is created after each of these load should be different
             expect(updatedFeed).not.toEqual(origFeed);
-                
         });
     });
 }());
